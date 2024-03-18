@@ -3,7 +3,7 @@
 {% block content %}
 
     {% if user.is_authenticated %}
-        <p>Hello my friend {{ user.username }}!</p>
+        <h4>Hello my friend {{ user.username }}!</h4>
 
         <form method="post" action="{% url 'logout' %}">
             {% csrf_token %}
@@ -17,7 +17,7 @@
             <p>{{ post.body }}</p>
         {% endfor %}
     {% else %}
-        <p>You are not logged in</p>
+        <h4>You are not logged in<h4>
         <a href="{% url 'signup' %}" class="btn btn-primary">Sign-Up</a> |
         <a href="{% url 'login' %}" class="btn btn-primary">Log-in</a>
     {% endif %}
